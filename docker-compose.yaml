@@ -1,0 +1,36 @@
+version: '3.7'
+services:
+  backend:
+    build: 
+      context: backend/
+      dockerfile: Dockerfile
+    init: true
+    networks:
+    - ss-app
+  frontend:
+    build: 
+      context: frontend/
+      dockerfile: Dockerfile
+    init: true
+    networks:
+    - ss-app
+    ports:
+    - "9091-9095:8080"
+    depends_on:
+    - backend-app
+networks:
+  application:
+    name: ss-app
+
+  #   db:
+  #   image: mysql:5.7.22
+  #   restart: always
+  #   environment:
+  #     MYSQL_DATABASE: admin
+  #     MYSQL_USER: root
+  #     MYSQL_PASSWORD: root
+  #     MYSQL_ROOT_PASSWORD: root
+  # volumes:
+  # - .dbdata:/var/lib/mysql
+  # ports:
+  #   - 33066:3306
