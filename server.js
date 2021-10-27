@@ -34,7 +34,7 @@ app.get('/athlete/:id', (req, res) => {
     if (!error && response.statusCode == 200) {
       var obj = JSON.parse(body);
       if (id == 5) {
-        name = "Hey "+obj.firstName + " " + obj.lastName + ", This is a new test statement!"
+        name = "Hey "+obj.firstName + " " + obj.lastName + ", THIS IS YET ANOTHER TEST!"
       } else {
         name = "Hey "+obj.firstName + " " + obj.lastName + ", Bring Gold home!"
         
