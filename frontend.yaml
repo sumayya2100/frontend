@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: node-fe-ss
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      tier: frontend
+      app: sumapp
+  template:
+    metadata:
+      labels:
+        tier: frontend
+        app: sumapp
+    spec:
+      containers:
+      - name: frontend
+        image: sumayya2100/ss-app-fe:v0.0.02
+        ports:
+        - containerPort: 8080
+          name: tcp
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: svc-fe
+spec:
+  type: NodePort
+  selector:
+    tier: frontend
+    app: sumapp
+  ports:
+  - protocol: TCP
+    port: 8080
+    targetPort: 8080
+    nodePort: 31000
