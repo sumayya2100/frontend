@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: sumayya2100/ss-app-fe:v0.0.02
+        image: sumayya2100/ss-app-fe:v0.0.03
         ports:
         - containerPort: 8080
           name: tcp
