@@ -6,7 +6,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'docker build -t sumayya2100/ss-app-fe:v0.0.02 .'
+        sh 'docker build -t sumayya2100/ss-app-fe:v0.0.03 .'
       }
     }
     stage('Login') {
@@ -16,7 +16,7 @@ pipeline {
 		}
 		stage('Push') {
 			steps {
-				sh 'docker push sumayya2100/ss-app-fe:v0.0.02'
+				sh 'docker push sumayya2100/ss-app-fe:v0.0.03'
 			}
 		}
 	}
