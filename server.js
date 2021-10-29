@@ -9,7 +9,7 @@ const HOST = '0.0.0.0';
 // App
 const app = express();
 app.get('/hello', (req, res) => {
-  res.send('Welcome to Oympics 2020!\n');
+  res.send('Welcome to Olympics 2020! Let the games begin!\n');
 });
 
 var request = require('request');
